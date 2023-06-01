@@ -1,4 +1,4 @@
 export const VOTE = {
   UPDOOT: "goodcredit",
-  DOWNDOOT: "downdoot",
+  DOWNDOOT: "badcredit",
 } as const;
