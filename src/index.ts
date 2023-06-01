@@ -1,4 +1,4 @@
-import { Client, GatewayIntentBits, Partials } from "discord.js";
+import { Client, Events, GatewayIntentBits, Partials } from "discord.js";
 import fs from "fs";
 import path from "path";
 import { configDotenv } from "dotenv";
@@ -25,5 +25,9 @@ for (const file of eventFiles) {
       console.error(`Error importing event file: ${file}`, err);
     });
 }
+
+discord.once(Events.ClientReady, (c) => {
+  console.log(`Ready! Logged in as ${c.user.tag}`);
+});
 
 discord.login(process.env.DISCORD_SECRET);
