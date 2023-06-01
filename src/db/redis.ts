@@ -3,7 +3,7 @@ import { configDotenv } from "dotenv";
 configDotenv();
 
 const redis = createClient({
-  url: "redis://redis-10710.c1.us-west-2-2.ec2.cloud.redislabs.com:10710",
+  url: process.env.REDIS_URL,
   password: process.env.REDIS_SECRET,
 });
 
